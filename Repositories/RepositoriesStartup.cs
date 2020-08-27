@@ -8,6 +8,8 @@ namespace ECS.Aplicacao.WebApi.Repositories
     {
         public static void StartupRepositories(IServiceCollection services)
         {
+            services.AddSingleton<CacheWrapper>();
+            services.AddSingleton<DapperRepositoryUtils>();
             services.AddScoped(typeof(IRepository<Cliente>), typeof(ClienteRepository));
         }
     }
